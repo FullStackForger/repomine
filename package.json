@@ -1,0 +1,30 @@
+{
+  "name": "repomine",
+  "version": "1.0.0",
+  "description": "library cloning and updating repositories",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/indieforger/repomine.git"
+  },
+  "keywords": [
+    "git",
+    "pull",
+    "update",
+    "repo"
+  ],
+  "author": "https://github.com/indieforger",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/indieforger/repomine/issues"
+  },
+  "homepage": "https://github.com/indieforger/repomine#readme",
+  "dependencies": {
+    "async": "^1.5.0",
+    "simple-git": "^1.18.0",
+    "verify-path": "^1.0.1"
+  }
+}
