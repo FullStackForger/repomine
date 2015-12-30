@@ -34,7 +34,7 @@ internal.updateRepositories = function (settings) {
 		async.parallel(settings.repos.map((page) => {
 
 			return (callback) => {
-				let repoPath = path.resolve(__dirname, settings.path, page.dir)
+				let repoPath = path.resolve(process.cwd(), settings.path, page.dir)
 
 				function onReject(err) {
 					page.ready = false
