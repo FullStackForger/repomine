@@ -7,7 +7,6 @@ var
 	verifyPath = require('verify-path'),
 	internal = {};
 
-
 /**
  * Verifies target path and then clones or fast forwards repositories.
  * Returns promise that should always resolve.
@@ -26,6 +25,8 @@ exports.update = function (settings) {
 }
 
 internal.updateRepositories = function (settings) {
+	let updateTime = Date.now();
+
 	return new Promise((resolve, reject) => {
 		if (settings.repos == undefined || !settings.repos instanceof Array) {
 			reject('Bad configuration, pages property couldn\'t be found');
@@ -79,6 +80,9 @@ internal.updateRepositories = function (settings) {
 			}
 		}), (error, results) => {
 			if (error) return reject(error)
+
+			settings.updateTime = updateTime
+			settings.updateDuration = Date.now() - updateTime
 			resolve(settings)
 		})
 	})
