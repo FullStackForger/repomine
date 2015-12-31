@@ -29,7 +29,7 @@ internal.updateRepositories = function (settings) {
 
 	return new Promise((resolve, reject) => {
 		if (settings.repos == undefined || !settings.repos instanceof Array) {
-			reject('Bad configuration, pages property couldn\'t be found');
+			reject(new Error('Bad configuration, repos property couldn\'t be found'));
 		}
 
 		async.parallel(settings.repos.map((page) => {
